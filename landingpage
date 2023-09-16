@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ... Ihr bisheriger Head-Code ... -->
+</head>
+<body>
+    <!-- ... Ihr bisheriger Body-Code ... -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function getURLParameter(name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+            }
+
+            let token = getURLParameter('token');
+            if (token) {
+                window.location.href = "myquittify://scannerapp/reset-password?token=" + token;
+            } else {
+                console.error("Kein Token gefunden.");
+            }
+        });
+    </script>
+</body>
+</html>
