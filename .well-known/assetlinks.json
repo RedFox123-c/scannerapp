@@ -1,7 +1,7 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
-    "namespace": "scanner_app",
+    "namespace": "android_app",
     "package_name": "com.example.scanner_app",
     "sha256_cert_fingerprints": ["AA:AA:A1:75:1E:EB:73:89:12:37:AA:18:89:27:B3:CE:6B:E4:FF:57:B1:34:90:27:81:6B:2A:CD:8A:E5:44:2E"]
   }
