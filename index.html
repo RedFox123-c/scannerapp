@@ -1,15 +1,36 @@
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    function getURLParameter(name) {
-        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ... Ihr bisheriger Head-Code ... -->
+    <style>
+        /* Optionaler Stil, um den Text zentriert und größer zu machen */
+        body {
+            font-family: Arial, sans-serif; /* Verwendet die Arial Schriftart; Sie können dies ändern, falls gewünscht */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Stellt sicher, dass der Container den gesamten Bildschirmhöhe einnimmt */
+            font-size: 24px; /* Setzt die Schriftgröße */
+        }
+    </style>
+</head>
+<body>
+    <!-- Willkommensnachricht -->
+    <div>Willkommen bei Quittify</div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function getURLParameter(name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+            }
 
-    let token = getURLParameter('token');
-    if (token) {
-        // Direktes Öffnen der App über App Link mit dem Token als Parameter
-        window.location.href = "https://redfox123-c.github.io/scannerapp/?token=" + token;
-    } else {
-        console.error("Kein Token gefunden.");
-    }
-});
-</script>
+            let token = getURLParameter('token');
+            if (token) {
+                window.location.href = "myquittify://scannerapp/reset-password?token=" + token;
+            } else {
+                console.error("Kein Token gefunden.");
+            }
+        });
+    </script>
+</body>
+</html>
